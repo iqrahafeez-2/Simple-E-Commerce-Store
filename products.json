@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "T-Shirt",
+    "price": 20,
+    "description": "A soft cotton T-shirt",
+    "image": "https://www.befunky.com/images/wp/wp-2022-09-tshirt-design-mockup-featured.jpg?auto=avif,webp&format=jpg&width=1200&crop=16:9"
+  },
+  {
+    "id": 2,
+    "name": "Shoes",
+    "price": 50,
+    "description": "Comfortable running shoes",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/ghk-0417240888-665784704a011.jpg?crop=1.00xw:0.565xh;0,0.420xh&resize=980:*"
+  },
+  {
+    "id": 3,
+    "name": "Watch",
+    "price": 100,
+    "description": "A stylish wristwatch",
+    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sneakers",
+    "price": 60,
+    "description": "Comfortable running sneakers",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe7ZbQ92u1JD-JgD4Kkhkju83p_uvKelP5jw&s",
+    "category": "Footwear",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Leather Wallet",
+    "price": 35,
+    "description": "Genuine leather wallet",
+    "image": "https://www.mugart.pk/wp-content/uploads/2022/06/WLT-106-b-min.jpg",
+    "category": "Accessories",
+    "rating": 3
+  },
+  {
+    "id": 6,
+    "name": "Smart Watch",
+    "price": 120,
+    "description": "Fitness smart-watch",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvSQoYMBfYjjrxkAUORfM4F5EPCUUPncgWQ&s",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "name": "Baseball Cap",
+    "price": 15,
+    "description": "Cool streetwear cap",
+    "image": "https://chiefapparel.pk/cdn/shop/files/caps-6.jpg?v=1698242782&width=1080",
+    "category": "Clothing",
+    "rating": 4
+  },
+  {
+    "id": 8,
+    "name": "Sunglasses",
+    "price": 45,
+    "description": "UV protected sunglasses",
+    "image": "https://www.arzaan.pk/cdn/shop/products/re2_900x.jpg?v=1684931902",
+    "category": "Accessories",
+    "rating": 5
+  },
+  {
+    "id": 9,
+    "name": "Bluetooth Speaker",
+    "price": 80,
+    "description": "Portable speaker with bass",
+    "image": "https://static-01.daraz.pk/original/d3a2403fde41b3dace24f2c8a92c4653.jpg",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 10,
+    "name": "Backpack",
+    "price": 50,
+    "description": "Waterproof travel backpack",
+    "image": "https://www.catfootwear.com.pk/cdn/shop/products/83541-184TheProjectBackpack_1.jpg?v=1743629594",
+    "category": "Accessories",
+    "rating": 5
+  },
+  {
+    "id": 11,
+    "name": "Denim Jeans",
+    "price": 55,
+    "description": "Slim-fit denim jeans",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaFR-we6o-EuzcGwNjR_04m2W9hlJeYC_zIA&s",
+    "category": "Clothing",
+    "rating": 4
+  },
+  {
+    "id": 12,
+    "name": "Formal Shoes",
+    "price": 75,
+    "description": "Leather formal shoes",
+    "image": "https://www.ladirstore.com/cdn/shop/files/Crimson_formal_shoes_for_men.webp?v=1734106924&width=1946",
+    "category": "Footwear",
+    "rating": 5
+  },
+  {
+    "id": 13,
+    "name": "Phone Charger",
+    "price": 18,
+    "description": "Fast USB-C charger",
+    "image": "https://image.made-in-china.com/2f0j00ocfqTWaGOKkb/Original-Charger-for-Samsung-iPhone-Huawei-Xiaomi-Us-UK-EU-Plug-Phone-Charger-for-Samsung-Total-40W-Fast-Mobile-Charger-Mobile-Phone-Accessories.webp",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 14,
+    "name": "Hoodie",
+    "price": 40,
+    "description": "Cozy winter hoodie",
+    "image": "https://thehawk.pk/cdn/shop/files/1_51f458bb-d64a-41fe-aa07-8b004803dd9f.webp?v=1693327005&width=1445",
+    "category": "Clothing",
+    "rating": 4
+  },
+  {
+    "id": 15,
+    "name": "Headphones",
+    "price": 70,
+    "description": "Noise-cancelling headphones",
+    "image": "https://appleman.pk/cdn/shop/products/Model-P9-Headphone-5.jpg?v=1667811930",
+    "category": "Electronics",
+    "rating": 5
+  },
+  {
+    "id": 16,
+    "name": "Scarf",
+    "price": 12,
+    "description": "Soft woolen scarf",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf-JW6XfwPVhFJqzzOWK9S_H-gGqqPg9mK5A&s",
+    "category": "Accessories",
+    "rating": 3
+  },
+  {
+    "id": 17,
+    "name": "Sports Watch",
+    "price": 95,
+    "description": "Digital sports watch",
+    "image": "https://cdn.outsideonline.com/wp-content/uploads/2025/01/Garmin_Enduro_2_s.jpg",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 18,
+    "name": "Canvas Shoes",
+    "price": 35,
+    "description": "Lightweight canvas shoes",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2einMawhSFLnimUnuOgwF5WgIa1A8UX4m4A&s",
+    "category": "Footwear",
+    "rating": 4
+  },
+  {
+    "id": 19,
+    "name": "Crossbody Bag",
+    "price": 42,
+    "description": "Trendy side sling bag",
+    "image": "https://jafferjees.com/cdn/shop/files/5510081902_1_1.jpg?v=1746990455",
+    "category": "Accessories",
+    "rating": 5
+  },
+  {
+    "id": 20,
+    "name": "Track Pants",
+    "price": 38,
+    "description": "Comfortable jogger pants",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsm0B6Ob-enrWDM4mBtE6UETJebp5qt1hsyQ&s",
+    "category": "Clothing",
+    "rating": 4
+  },
+  {
+    "id": 21,
+    "name": "Laptop Sleeve",
+    "price": 30,
+    "description": "Shockproof 15” sleeve",
+    "image": "https://dablew.pk/wp-content/uploads/2023/07/Buy-Original-Fabric-Laptop-Sleeve-in-Pakistan-at-Dab-Lew-Tech-2.jpg",
+    "category": "Accessories",
+    "rating": 4
+  },
+  {
+    "id": 22,
+    "name": "Power Bank",
+    "price": 65,
+    "description": "20000mAh fast charging",
+    "image": "https://hubeltd.com/cdn/shop/products/firstpostSML-01.jpg?v=1696180147",
+    "category": "Electronics",
+    "rating": 5
+  },
+  {
+    "id": 23,
+    "name": "Graphic Tee",
+    "price": 22,
+    "description": "Printed T-shirt",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ294ujEpC4pIQVnSkp5JWpeWMHDMtG6VW9ug&s",
+    "category": "Clothing",
+    "rating": 3
+  },
+  {
+    "id": 24,
+    "name": "Wireless Mouse",
+    "price": 25,
+    "description": "Smooth tracking mouse",
+    "image": "https://easetec.com.pk/wp-content/uploads/2023/05/1-12-e1687506773171-300x300.jpg",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 25,
+    "name": "Fitness Band",
+    "price": 55,
+    "description": "Heart rate tracker",
+    "image": "https://xcessorieshub.com/wp-content/uploads/2024/08/Xiaomi-Smart-Band-9-1.webp",
+    "category": "Electronics",
+    "rating": 4
+  },
+  {
+    "id": 26,
+    "name": "Flip Flops",
+    "price": 18,
+    "description": "Beach-ready flip flops",
+    "image": "https://thumbs.dreamstime.com/b/flip-flops-blue-decking-row-colorful-old-weathered-painted-beach-space-copy-53197175.jpg",
+    "category": "Footwear",
+    "rating": 3
+  },
+  {
+    "id": 27,
+    "name": "Wallet Combo",
+    "price": 50,
+    "description": "Wallet & Keychain set",
+    "image": "https://a2zeegifts.com/wp-content/uploads/2023/04/Wallet-box-combo-3.webp",
+    "category": "Accessories",
+    "rating": 5
+  },
+  {
+    "id": 28,
+    "name": "Polo Shirt",
+    "price": 28,
+    "description": "Classic polo shirt",
+    "image": "https://uniworthdress.com/uploads/product/TP2406..jpg",
+    "category": "Clothing",
+    "rating": 4
+  },
+  {
+    "id": 29,
+    "name": "Winter Gloves",
+    "price": 20,
+    "description": "Insulated gloves",
+    "image": "https://cdn.thewirecutter.com/wp-content/media/2023/12/touchscreen-gloves-2048px-9959.jpg?auto=webp&quality=75&width=1024",
+    "category": "Accessories",
+    "rating": 4
+  },
+  {
+    "id": 30,
+    "name": "Sneaker Cleaner",
+    "price": 12,
+    "description": "Shoe cleaning kit",
+    "image": "https://www.borjan.com.pk/cdn/shop/files/1_3182b8a2-c858-4aee-8745-d581e55b3ce8.png?v=1750961142",
+    "category": "Footwear",
+    "rating": 4
+  },
+  {
+    "id": 31,
+    "name": "Portable Fan",
+    "price": 22,
+    "description": "USB mini fan",
+    "image": "https://img.drz.lazcdn.com/static/pk/p/4165cfe6e07f2780bafeec212464f34f.jpg_720x720q80.jpg_.webp",
+    "category": "Electronics",
+    "rating": 3
+  },
+  {
+    "id": 32,
+    "name": "Leather Belt",
+    "price": 30,
+    "description": "Durable men's belt",
+    "image": "https://m.media-amazon.com/images/I/91fY-7BP8qS._AC_SL1500_.jpg",
+    "category": "Accessories",
+    "rating": 4
+  },
+  {
+    "id": 33,
+    "name": "Sling Bag",
+    "price": 48,
+    "description": "Modern unisex sling bag",
+    "image": "https://i5.walmartimages.com/seo/Summer-Savings-Clearance-Suncoda-Sling-Bag-Women-Men-Crossbody-Sling-Backpack-Small-Sling-Bag-Multipurpose-Crossbody-Shoulder-Bag-Travel-Hiking-Backp_cbb718f5-7215-4218-b118-30ec029cca5e.7aa8fa25c22cdf1d56a37237aaf2108e.jpeg",
+    "category": "Accessories",
+    "rating": 4
+  },
+  {
+    "name": "Heels",
+    "price": 40,
+    "description": "Women's heels",
+    "image": "https://i.pinimg.com/736x/a8/45/aa/a845aa26dd2310a9dcb22a384746a67b.jpg",
+    "category": "Footwear",
+    "rating": 5,
+    "id": 34
+  }
+]

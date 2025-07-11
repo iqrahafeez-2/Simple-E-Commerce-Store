@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | My E‑Store</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: orange;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      background: orange;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkorange;
+    }
+    .msg {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Create Account</h2>
+  <input type="text" id="name" placeholder="Full Name" required />
+  <input type="email" id="email" placeholder="Email Address" required />
+  <input type="password" id="password" placeholder="Password" required />
+  <button onclick="register()">Register</button>
+  <p class="msg" id="message"></p>
+  <p class="msg"><a href="login.html">Already have an account? Login</a></p>
+</div>
+
+<script>
+function register() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+
+  const message = document.getElementById('message');
+  message.textContent = '';
+
+  if (!name || !email || !password) {
+    message.style.color = 'red';
+    message.textContent = 'Please fill all fields.';
+    return;
+  }
+
+  fetch('products.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, password })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.message === 'Registered successfully') {
+      message.style.color = 'green';
+      message.textContent = 'Registered! Redirecting to login...';
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
+    } else {
+      message.style.color = 'red';
+      message.textContent = data.message || 'Registration failed';
+    }
+  })
+  .catch(err => {
+    console.error('Error:', err);
+    message.style.color = 'red';
+    message.textContent = 'Something went wrong.';
+  });
+}
+</script>
+
+</body>
+</html>

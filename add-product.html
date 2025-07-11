@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Product</title>
+<style>body{font-family:sans-serif;background:#f4f4f4;padding:20px}
+form{background:#fff;padding:20px;border-radius:8px;max-width:400px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+input,textarea,select{width:100%;padding:8px;margin:8px 0}
+button{background:orange;color:#fff;padding:10px;border:none;border-radius:5px;cursor:pointer;width:100%}</style></head>
+<body>
+<form id="form">
+  <h2>Add New Product</h2>
+  <input name="name" placeholder="Name" required>
+  <input name="price" placeholder="Price" type="number" min="1" required>
+  <textarea name="description" placeholder="Description" required></textarea>
+  <input name="image" placeholder="Image URL" required>
+  <input name="category" placeholder="Category" required>
+  <select name="rating"><option value="1">★</option><option value="2">★★</option><option value="3">★★★</option><option value="4">★★★★</option><option value="5">★★★★★</option></select>
+  <button type="submit">Add Product</button>
+</form>
+<script>
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();
+  const f=Object.fromEntries(new FormData(e.target));
+  f.price=parseFloat(f.price); f.rating=parseInt(f.rating);
+  fetch('/api/add-product', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(f)
+  }).then(r=>r.ok?alert('Added!'):alert('Error'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: orange;
+      color: white;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    #toggle-darkmode {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td::before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+      }
+      td:nth-of-type(1)::before { content: "Product"; }
+      td:nth-of-type(2)::before { content: "Price"; }
+      td:nth-of-type(3)::before { content: "Qty"; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🛠 Admin Panel - Orders</h1>
+  <button id="toggle-darkmode">Toggle Dark Mode</button>
+
+  <table id="orders-table">
+    <thead>
+      <tr><th>Product</th><th>Price</th><th>Qty</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+  fetch('orders.json')
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.querySelector('#orders-table tbody');
+      tbody.innerHTML = '';
+      if (!data.length) {
+        tbody.innerHTML = '<tr><td colspan="3">No orders found.</td></tr>';
+        return;
+      }
+      data.forEach(o => {
+        o.order.forEach(p => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${p.name}</td><td>$${p.price}</td><td>${p.quantity}</td>`;
+          tbody.appendChild(row);
+        });
+      });
+    })
+    .catch(() => {
+      document.querySelector('#orders-table tbody').innerHTML = '<tr><td colspan="3">❌ Failed to load orders.</td></tr>';
+    });
+
+  document.getElementById('toggle-darkmode').onclick = function () {
+    document.body.classList.toggle('dark-mode');
+  };
+</script>node server.js
+</body>
+</html>

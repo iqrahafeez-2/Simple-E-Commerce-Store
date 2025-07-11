@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🛍️ My E‑Store</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: orange;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    #user-info {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 16px;
+    }
+    #user-info button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background: white;
+      color: orange;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #user-info a {
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      background: white;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #searchBar, #categoryFilter {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #controls a {
+      text-decoration: none;
+      background: #ff8800;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    #controls a:hover {
+      background: #e07000;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+    .product-card p {
+      margin: 4px 0;
+    }
+    .rating {
+      color: #f39c12;
+      font-size: 16px;
+    }
+    .product-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #ff8c00;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .product-card a:hover {
+      background: #e07b00;
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🛍️ My E‑Store
+  <div id="user-info"></div>
+</header>
+
+<div id="controls">
+  <input id="searchBar" placeholder="Search products..." />
+  <select id="categoryFilter">
+    <option value="">All Categories</option>
+  </select>
+  <a href="add-product.html">➕ Add Product</a>
+  <a href="cart.html">🛒 Cart</a>
+  <a href="admin.html">🔐 Admin Panel</a>
+</div>
+
+<div class="container" id="product-list"></div>
+
+<footer>&copy; 2025 My E‑Store | Project by Iqra Hafeez</footer>
+
+<script>
+let products = [];
+
+fetch('products.json')
+  .then(res => res.json())
+  .then(data => {
+    products = data;
+    populateCategories();
+    renderProducts(products);
+  });
+
+const productList = document.getElementById('product-list');
+const searchBar = document.getElementById('searchBar');
+const categoryFilter = document.getElementById('categoryFilter');
+
+searchBar.oninput = applyFilters;
+categoryFilter.onchange = applyFilters;
+
+function populateCategories() {
+  const cats = [...new Set(products.map(p => p.category).filter(Boolean))];
+  cats.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c;
+    categoryFilter.appendChild(opt);
+  });
+}
+
+function applyFilters() {
+  const keyword = searchBar.value.toLowerCase();
+  const category = categoryFilter.value;
+
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(keyword) &&
+    (category ? p.category === category : true)
+  );
+
+  renderProducts(filtered);
+}
+
+function renderProducts(list) {
+  productList.innerHTML = '';
+  list.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product-card';
+    div.innerHTML = `
+      <img src="${p.image}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p><strong>$${p.price}</strong></p>
+      <p class="rating">${'★'.repeat(p.rating || 4)}${'☆'.repeat(5 - (p.rating || 4))}</p>
+      <a href="product.html?id=${p.id}">View Details</a>
+    `;
+    productList.appendChild(div);
+  });
+}
+
+// ---------------- Show Login/Register or Logout ----------------
+const user = JSON.parse(localStorage.getItem('user'));
+const userInfo = document.getElementById('user-info');
+
+if (user) {
+  userInfo.innerHTML = `👋 Welcome, ${user.name} <button onclick="logout()">Logout</button>`;
+} else {
+  userInfo.innerHTML = `<a href="login.html">Login</a> / <a href="register.html">Register</a>`;
+}
+
+function logout() {
+  localStorage.removeItem('user');
+  location.reload();
+}
+</script>
+
+</body>
+</html>
