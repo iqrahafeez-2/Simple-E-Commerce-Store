@@ -1,5 +1,6 @@
 # codealpha_task1
 🛒 Simple E-Commerce Web App
+
 A beginner-friendly full-stack e-commerce application built with;
 Technologies Used:
 -Frontend: HTML, CSS, JavaScript
