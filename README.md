@@ -1,4 +1,3 @@
-# codealpha_task1
 🛒 Simple E-Commerce Web App
 
 A beginner-friendly full-stack e-commerce application built with;
@@ -35,8 +34,7 @@ Technologies Used:
 
  How to Run Locally:
 1. Clone this Repository
-git clone https://github.com/your-username/codealpha_task1.git
-cd codealpha_task1
+git clone https://github.com/your-username/task1.git
 2. Install Dependencies
 npm install
 3. Start the Server
